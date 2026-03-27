@@ -9,13 +9,14 @@ export function RsvpSection() {
   const [selectedGuess, setSelectedGuess] = useState<"niña" | "niño" | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [name, setName] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!name || !selectedGuess) return
 
-
+    setLoading(true)
     try {
       const res = await fetch("/api/rsvp", {
         method: "POST",
@@ -28,12 +29,25 @@ export function RsvpSection() {
         }),
       })
 
-      if (!res.ok) throw new Error("Error")
+      let data
+
+      try {
+        data = await res.json()
+      } catch {
+        data = { message: "Respuesta no válida del servidor" }
+      }
+
+      if (!res.ok) {
+        console.error(data)
+        throw new Error(data.message)
+      }
 
       setSubmitted(true)
     } catch (error) {
       console.error(error)
-      alert("Hubo un error enviando la confirmación 😢")
+      alert("Hubo un error 😢")
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -167,10 +181,10 @@ export function RsvpSection() {
               >
                 <Button
                   type="submit"
-                  disabled={!name || !selectedGuess}
-                  className="w-full py-6 text-lg font-medium bg-foreground text-background hover:bg-foreground/90 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  disabled={!name || !selectedGuess || loading}
+                  className="w-full py-6 text-lg font-medium bg-foreground text-background hover:bg-foreground/90 rounded-xl disabled:opacity-50"
                 >
-                  Confirmar Asistencia
+                  {loading ? "Enviando..." : "Confirmar Asistencia"}
                 </Button>
               </motion.div>
             </motion.form>
@@ -210,6 +224,47 @@ export function RsvpSection() {
           )}
         </AnimatePresence>
       </div>
+
+      {loading && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50"
+        >
+          <div className="flex flex-col items-center gap-6">
+            
+            <motion.div
+              className="w-20 h-20 rounded-full border-4 border-primary/30 border-t-primary"
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+            />
+
+            <div className="flex gap-2">
+              {[0, 1, 2].map((i) => (
+                <motion.div
+                  key={i}
+                  animate={{ y: [0, -10, 0], opacity: [0.6, 1, 0.6] }}
+                  transition={{
+                    duration: 1.2,
+                    repeat: Infinity,
+                    delay: i * 0.2,
+                  }}
+                >
+                  <Heart className="w-5 h-5 text-primary fill-primary/70" />
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <Sparkles className="w-5 h-5 text-primary/70" />
+            </motion.div>
+          </div>
+        </motion.div>
+      )}
     </section>
   )
 }
