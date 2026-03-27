@@ -7,7 +7,7 @@ const details = [
   {
     icon: Calendar,
     label: "Fecha",
-    value: "Sábado, 18 de Abril 2026",
+    value: "Sábado 2 de Mayo 2026",
   },
   {
     icon: Clock,
@@ -17,7 +17,7 @@ const details = [
   {
     icon: MapPin,
     label: "Lugar",
-    value: "Centro de Recreo Grupo Comeca, Urb. Bosques de Santa Ana",
+    value: "Condominio Oásis de San José, San Sebastián",
   },
 ]
 
@@ -83,7 +83,7 @@ export function EventDetails() {
             
             {/* MAPA */}
             <iframe
-              src="https://www.google.com/maps?q=Centro+de+Recreo+Grupo+Comeca+Santa+Ana&output=embed"
+              src="https://www.google.com/maps?q=Condominio+Oásis+de+San+José+San+Sebastián&output=embed"
               width="100%"
               height="300"
               style={{ border: 0 }}
@@ -101,7 +101,7 @@ export function EventDetails() {
             
             {/* GOOGLE MAPS */}
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Centro+de+Recreo+Grupo+Comeca+Santa+Ana"
+              href="https://www.google.com/maps/search/?api=1&query=Condominio+Oásis+de+San+José+San+Sebastián"
               target="_blank"
               className="px-6 py-3 rounded-full bg-primary text-white text-sm shadow-md hover:scale-105 transition"
             >
@@ -110,7 +110,7 @@ export function EventDetails() {
 
             {/* WAZE */}
             <a
-              href="https://waze.com/ul?q=Centro+de+Recreo+Grupo+Comeca+Santa+Ana"
+              href="https://waze.com/ul?q=Condominio+Oásis+de+San+José+San+Sebastián"
               target="_blank"
               className="px-6 py-3 rounded-full border border-border text-sm hover:bg-accent transition"
             >
