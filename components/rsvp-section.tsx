@@ -45,7 +45,7 @@ export function RsvpSection() {
       setSubmitted(true)
     } catch (error) {
       console.error(error)
-      alert("Hubo un error 😢")
+      alert("Hubo un error")
     } finally {
       setLoading(false)
     }
@@ -104,7 +104,7 @@ export function RsvpSection() {
                 />
               </motion.div>
 
-              {/* Gender guess */}
+              {/* Gender options */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
