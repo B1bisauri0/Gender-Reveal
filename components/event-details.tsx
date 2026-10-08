@@ -21,6 +21,9 @@ const details = [
   },
 ]
 
+const LAT = 9.933075
+const LNG = -84.05657
+
 export function EventDetails() {
   return (
     <section className="py-20 px-4 bg-card">
@@ -83,7 +86,7 @@ export function EventDetails() {
             
             {/* MAPS */}
             <iframe
-              src="https://www.google.com/maps?q=Mall+San+Pedro&output=embed"
+              src={`https://www.google.com/maps?q=${LAT},${LNG}&z=16&output=embed`}
               width="100%"
               height="300"
               style={{ border: 0 }}
@@ -100,7 +103,7 @@ export function EventDetails() {
             
             {/* GOOGLE MAPS */}
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Mall+San+Pedro"
+              href={`https://www.google.com/maps/search/?api=1&query=${LAT},${LNG}`}
               target="_blank"
               className="px-6 py-3 rounded-full bg-primary text-white text-sm shadow-md hover:scale-105 transition"
             >
@@ -109,7 +112,7 @@ export function EventDetails() {
 
             {/* WAZE */}
             <a
-              href="https://waze.com/ul?q=Mall+San+Pedro"
+              href={`https://waze.com/ul?q=${LAT},${LNG}`}
               target="_blank"
               className="px-6 py-3 rounded-full border border-border text-sm hover:bg-accent transition"
             >
