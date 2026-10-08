@@ -7,7 +7,7 @@ const details = [
   {
     icon: Calendar,
     label: "Fecha",
-    value: "Sábado 2 de Mayo 2026",
+    value: "Sábado 2 de Mayo 2030",
   },
   {
     icon: Clock,
@@ -83,7 +83,7 @@ export function EventDetails() {
             
             {/* MAPA */}
             <iframe
-              src="https://www.google.com/maps?q=Condominio+Oásis+de+San+José+San+Sebastián&output=embed"
+              src="https://www.google.com/maps?q=Mall+San+Pedro&output=embed"
               width="100%"
               height="300"
               style={{ border: 0 }}
