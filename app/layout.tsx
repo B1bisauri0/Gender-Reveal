@@ -18,7 +18,6 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: 'Invitación Gender Reveal',
   description: 'Estás invitado a nuestra revelación de género',
-  generator: 'v0.app',
   icons: {
     icon: '/gender.jpg',
   }

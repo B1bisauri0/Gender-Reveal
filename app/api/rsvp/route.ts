@@ -35,12 +35,12 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const message = `💌 Nueva confirmación
+    const message = `Nueva confirmación
 
-👤 Nombre: ${cleanName}
-🎀 Predicción: ${cleanGuess === "niña" ? "Niña 💗" : "Niño 💙"}
+Nombre: ${cleanName}
+Predicción: ${cleanGuess === "niña" ? "Niña 💗" : "Niño 💙"}
 
-✨ Confirmó asistencia al gender reveal`
+Confirmó asistencia al gender reveal`
 
     const response = await fetch(process.env.WHATSAPP_API_URL as string, {
       method: "POST",
