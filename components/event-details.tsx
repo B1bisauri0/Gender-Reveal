@@ -81,7 +81,7 @@ export function EventDetails() {
 
           <div className="relative rounded-3xl overflow-hidden shadow-xl border border-border">
             
-            {/* MAPA */}
+            {/* MAPS */}
             <iframe
               src="https://www.google.com/maps?q=Mall+San+Pedro&output=embed"
               width="100%"
@@ -92,7 +92,6 @@ export function EventDetails() {
               className="w-full h-[300px] md:h-[400px] grayscale hover:grayscale-0 transition duration-500"
             />
 
-            {/* OVERLAY SUAVE */}
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/60 to-transparent" />
           </div>
 
@@ -110,7 +109,7 @@ export function EventDetails() {
 
             {/* WAZE */}
             <a
-              href="https://waze.com/ul?q=Condominio+Oásis+de+San+José+San+Sebastián"
+              href="https://waze.com/ul?q=Mall+San+Pedro"
               target="_blank"
               className="px-6 py-3 rounded-full border border-border text-sm hover:bg-accent transition"
             >

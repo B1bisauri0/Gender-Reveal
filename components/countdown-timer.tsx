@@ -33,7 +33,7 @@ const timeUnits = [
 ]
 
 export function CountdownTimer() {
-  const targetDate = new Date("2026-05-02T10:00:00")
+  const targetDate = new Date("2030-05-02T10:00:00")
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft(targetDate))
   const [mounted, setMounted] = useState(false)
 
