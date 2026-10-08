@@ -17,7 +17,7 @@ const details = [
   {
     icon: MapPin,
     label: "Lugar",
-    value: "Condominio Oásis de San José, San Sebastián",
+    value: "Mall San Pedro (Ejemplo)",
   },
 ]
 
@@ -101,7 +101,7 @@ export function EventDetails() {
             
             {/* GOOGLE MAPS */}
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Condominio+Oásis+de+San+José+San+Sebastián"
+              href="https://www.google.com/maps/search/?api=1&query=Mall+San+Pedro"
               target="_blank"
               className="px-6 py-3 rounded-full bg-primary text-white text-sm shadow-md hover:scale-105 transition"
             >
@@ -127,7 +127,7 @@ export function EventDetails() {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="mt-16 text-center"
         >
-          {/* Título */}
+          {/* Title */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +140,7 @@ export function EventDetails() {
           {/* Cards */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             
-            {/* NIÑO */}
+            {/* Boy */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               animate={{ y: [0, -8, 0] }}
@@ -162,7 +162,6 @@ export function EventDetails() {
               </div>
             </motion.div>
 
-            {/* VS */}
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -171,7 +170,7 @@ export function EventDetails() {
               ✦
             </motion.div>
 
-            {/* NIÑA */}
+            {/* Girl */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               animate={{ y: [0, 8, 0] }}
