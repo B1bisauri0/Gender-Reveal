@@ -35,7 +35,6 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // 💌 Mensaje
     const message = `💌 Nueva confirmación
 
 👤 Nombre: ${cleanName}
@@ -43,7 +42,6 @@ export async function POST(req: NextRequest) {
 
 ✨ Confirmó asistencia al gender reveal`
 
-    // 📲 WhatsApp
     const response = await fetch(process.env.WHATSAPP_API_URL as string, {
       method: "POST",
       headers: {
@@ -67,7 +65,6 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // ✨ (Opcional) Auditoría
     await supabase.from("audit_log").insert({
       action: "INSERT",
       entity: "RSVP",
